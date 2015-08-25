@@ -1,0 +1,56 @@
+{% extends 'Survey/base2.html' %}
+{% block title %}Simpome{% endblock %}
+{% block content %}
+<head>
+  <title>Survey page</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body>
+<div class="col-md-12">
+{% if user.is_authenticated %}
+    <h1>hello {{ user.username }}!</h1>
+{% else %}
+    <h1>Welcome to Survey's</h1>
+    {% endif %}
+    <strong>{{ boldmessage }}</strong><br />
+</div>
+
+<div class="container">
+    <div class="col-md-12">
+  <h2>Here are the list of Surveys</h2>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Objective</th>
+        <th>Close By</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="/Survey/survey1/">SURVEY1</a></td>
+        <td>Doe</td>
+        <td>25/08/2015</td>
+        <td>In Progress</td>
+      </tr>
+      <tr>
+        <td><a href="/Survey/survey1/">SURVEY2</a></td>
+        <td>Moe</td>
+        <td>27/08/2015</td>
+        <td>Completed</td>
+      </tr>
+      <tr>
+        <td><a href="/Survey/survey1/">SURVEY3</a></td>
+        <td>Dooley</td>
+        <td>30/08/2015</td>
+        <td>New</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+</body>
+{% endblock %}

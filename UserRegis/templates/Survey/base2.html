@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<title>{% block title %}{% endblock %}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+  <!-- Fixed navbar -->
+  <section class="header">
+   <nav class="navbar navbar-default navbar-top">
+  <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+         <a class="navbar-brand" href="#">
+        <img id="logo-main" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/32877/logo-thing.png" width="100" alt="Logo Thing main logo">
+        </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../navbar/">Default</a></li>
+            <li><a href="../navbar-static-top/">Static top</a></li>
+            <li><a><strong>hi {{ user.username }}</strong></a></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown">Settings<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/Survey/update/" method="POST">Profile</a></li>{% csrf_token %}
+                <li><a href="/Survey/logout/">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+</section>
+
+<div class="container">
+
+</div>
+  {% block content %}
+  {% endblock %}
+
+<footer class="footer">
+      <div class="container">
+       <hr>
+       <p class="navbar-text pull-left">© 2015 - All rights reserverd. Tool built and managed by CSC, India Team
+      </p>
+      </div>
+      </div>
+</footer>
+
+</body>
+</html>

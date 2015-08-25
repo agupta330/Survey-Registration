@@ -1,0 +1,52 @@
+{% extends 'Survey/base1.html' %}
+{% block title %}Simpome{% endblock %}
+
+{% block content %}
+<head>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<meta charset="utf-8">
+</head>
+<body>
+<div class="container" id="login">
+<div class="col-md-8">
+
+<div class="jumbotron">
+    <h1>Survey website!</h1>
+    <p>This page will grow as we add more and more components from Bootstrap...</p>
+
+  <p>This is a paragraph.</p>s
+  <p>This is another paragraph.</p>
+  <p>This is a paragraph.</p>
+  <p>This is another paragraph.</p>
+  <p>This is a paragraph.</p>s
+  <p>This is another paragraph.</p>
+
+</div>
+</div>
+    <div class="col-md-4">
+        <h1>Register with us.</h1>
+
+        {% if registered %}
+        <strong>Thank you for registering!</strong>
+        <a href="/Survey/">Return to the homepage.</a><br />
+        {% else %}
+        <form id="user_form" method="post" action="/Survey/register/"
+                enctype="multipart/form-data" class="form col-md-12 center-block">
+
+            {% csrf_token %}
+
+            <!-- Display each form. The as_p method wraps each element in a paragraph
+                 (<p>) element. This ensures each element appears on a new line,
+                 making everything look neater. -->
+            {{ user_form.as_p }}
+            {{ profile_form.as_p }}
+
+            <!-- Provide a button to click to submit the form. -->
+            <input type="submit" name="submit" class="btn btn-success" value="Register" />
+        </form>
+        {% endif %}
+    </div>
+    </div>
+    </body>
+
+{% endblock %}

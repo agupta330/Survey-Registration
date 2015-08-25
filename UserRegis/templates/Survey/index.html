@@ -1,0 +1,46 @@
+{% extends 'Survey/base2.html' %}
+{% block title %}Simpome{% endblock %}
+
+{% block content %}
+
+
+    <head>
+        <title>Survey</title>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <meta charset="utf-8">
+    </head>
+
+    <body>
+    <div class="container" id="login">
+    <div class="col-md-8">
+
+    <div class="jumbotron">
+    <h1>Survey website!</h1>
+    <p>This page will grow as we add more and more components from Bootstrap...</p>
+
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+    </div>
+
+    </div>
+
+    <div class="col-md-4">
+   <!-- {% if user.is_authenticated %}
+    <h1>hello {{ user.username }}!</h1>
+    {% else %}
+    <h1>Welcome to Survey's</h1>
+    {% endif %}
+    <strong>{{ boldmessage }}</strong><br />
+-->
+
+
+    <a href="/Survey/restricted/" class="btn btn-info">Go to Survey</a><br />
+
+
+    </div>
+    </div>
+    </body>
+
+{% endblock %}
